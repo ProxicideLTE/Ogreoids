@@ -9,6 +9,7 @@
 #include "Level.h"
 #include "Projectile.h"
 #include "WeaponSystem.h"
+#include "MusicManager.h"
 
 namespace ogreoids {
 
@@ -162,6 +163,7 @@ namespace ogreoids {
 		ws1->addOutput(mSceneNode);
 		ws1->setSystemDamage(20);
 		ws1->setLifeSpan(1.0f);
+		ws1->setSoundFile(ws1_shot);
 		weaponSystems.push_back(ws1);
 
 		// 2 cannons on the wings.
@@ -171,6 +173,7 @@ namespace ogreoids {
 		ws2->addOutput(rightWing);
 		ws2->setSystemDamage(20);
 		ws2->setLifeSpan(0.75f);
+		ws2->setSoundFile(ws2_shot);
 		weaponSystems.push_back(ws2);
 
 		// 2 cannons on the wings.
@@ -180,6 +183,7 @@ namespace ogreoids {
 		ws3->addOutput(rightWing);
 		ws3->setSystemDamage(40);
 		ws3->setLifeSpan(0.75f);
+		ws3->setSoundFile(ws3_shot);
 		weaponSystems.push_back(ws3);
 
 		// 3 cannons, 1 center 2 on the wings.
@@ -190,6 +194,7 @@ namespace ogreoids {
 		ws4->addOutput(rightWing);
 		ws4->setSystemDamage(40);
 		ws4->setLifeSpan(0.5f);
+		ws4->setSoundFile(ws4_shot);
 		weaponSystems.push_back(ws4);
 
 		// Set default weapon system.
@@ -339,6 +344,8 @@ namespace ogreoids {
 
 		// Spawn new projectile.
 		if (id == OIS::MB_Left) {
+
+			MusicManager::getInstance()->playSound(currentWeaponSystem->getSoundFile());
 
 			// Shoot depending on the current weapon system.
 			for (unsigned i = 0; i < currentWeaponSystem->getOutput().size(); i++) {

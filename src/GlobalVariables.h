@@ -3,18 +3,36 @@
 
 namespace ogreoids {
 
-	// Gravity acceleration vector.
-    const Ogre::Vector3 gGravity(0, -9.8f, 0);        
+	// Global enum for sounds.
+	enum sounds {
+		// Weapon Systems.
+		ws1_shot = 0,
+		ws2_shot = 1,
+		ws3_shot = 2,
+		ws4_shot = 2
+		// Menu.
 
+		// Collisions.
+
+	};
+
+	// Global enum for background music.
+	enum bgm {
+		main_menu = 0
+	};
+
+	// Mouse sensitivity.
 	extern Ogre::Real gFreelookMouseSpeed;
     extern Ogre::Real gMouseSensitivity;
 
-	// default orientation vectors
-    const Ogre::Vector3 gForward(Ogre::Vector3(1, 0, 0));
+	// Gravity acceleration vector.
+    const Ogre::Vector3 gGravity(0, -9.8f, 0);        
 
-	// default orientation vectors
+	// Default orientation vectors.
+    const Ogre::Vector3 gForward(Ogre::Vector3(1, 0, 0));
     const Ogre::Vector3 gForwardZ(Ogre::Vector3(0, 0, 1));
 
+	// Conversions.
 	int charToInt(const char* c);
 	float charToFloat(const char* c);
 	std::string intToString(int num);

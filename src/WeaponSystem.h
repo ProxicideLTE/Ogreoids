@@ -9,6 +9,8 @@ namespace ogreoids {
 	class WeaponSystem {
 
 		// Instance variables.
+		unsigned										soundFile;
+
 		Ogre::Real										dmg;
 		Ogre::Real										lifeSpan;
 		Ogre::String									meshProjectile;
@@ -21,12 +23,14 @@ namespace ogreoids {
 		virtual ~WeaponSystem();
 
 		// Getters.
+		unsigned getSoundFile()							{ return soundFile; }
 		Ogre::Real getLifeSpan()						{ return lifeSpan; }
 		Ogre::Real getDamage()							{ return dmg; }
 		Ogre::String getMesh()							{ return meshProjectile; }
 		std::vector<Ogre::SceneNode*> getOutput()		{ return output; }
 
 		// Setters.
+		void setSoundFile(unsigned i)					{ soundFile = i; }
 		void setLifeSpan(Ogre::Real lifeSpan)			{ this->lifeSpan = lifeSpan; }
 		void setSystemDamage(Ogre::Real dmgAmt)			{ dmg = dmgAmt; }
 		void setProjectileMesh(Ogre::String mesh)		{ meshProjectile = mesh; }

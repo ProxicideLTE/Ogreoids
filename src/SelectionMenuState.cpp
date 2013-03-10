@@ -130,7 +130,7 @@ namespace ogreoids {
     bool SelectionMenuState::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 
 		mTrayMgr->frameRenderingQueued(evt);
-		MusicManager::getInstance()->update(evt.timeSinceLastFrame);
+		GameState::frameRenderingQueued(evt);
 
 		// Set captions for the buttons.
         mNextButton->setCaption("Next");

@@ -6,10 +6,13 @@ namespace ogreoids {
 	class MusicManager {
 
 		// FMOD variables.
-		FMOD_RESULT result;
-		FMOD::System* system;
+		FMOD_RESULT					result;
+		FMOD::System*				system;
 
-		// Music.
+		// Music and sound collection.
+		std::vector<FMOD::Sound*>		music;
+		std::vector<FMOD::Sound*>		sounds;
+		std::vector<FMOD::Channel*>		channels;
 
 		// Private constructor and destructor (Singleton design pattern).
 		MusicManager();
@@ -37,6 +40,9 @@ namespace ogreoids {
 			void update(Ogre::Real deltaT);
 			FMOD::Channel* setAttributes(Ogre::Vector3 pos, Ogre::Vector3 vel, FMOD::Channel* channel);
 			void setListenerAttributes(Ogre::Vector3 pos, Ogre::Vector3 vel, Ogre::Vector3 dir, Ogre::Vector3 up);
+
+			void playSound(unsigned index);
+
 	};
 
 }

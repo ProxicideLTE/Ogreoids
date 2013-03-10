@@ -148,6 +148,7 @@ namespace ogreoids {
 	 *
 	 */
     bool GameplayState::frameRenderingQueued(const Ogre::FrameEvent& evt) {
+		GameState::frameRenderingQueued(evt);
 		if (!pause) { level->update(evt.timeSinceLastFrame); }
 		btn_resume->setCaption("Resume");
         btn_main->setCaption("Main Menu");

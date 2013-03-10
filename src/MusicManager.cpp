@@ -4,14 +4,26 @@
 
 namespace ogreoids {
 
+	/**
+	 * MusicManager constructor.
+	 */
 	MusicManager::MusicManager(){
 		initialize();
 		createMusic();
 		createSounds();
 	}
 
-	MusicManager::~MusicManager(){
+	/**
+	 * MusicManager destructor.
+	 */
+	MusicManager::~MusicManager() {
 		
+		// Release all music channels.
+		for (unsigned i = 0; i < music.size(); i++) {
+			music[i]->release();
+			errorCheck("Failed to release music files");
+		}
+
 	}
 
 	MusicManager* MusicManager::getInstance(){
@@ -26,6 +38,9 @@ namespace ogreoids {
 //
 // =====================================================================================
 
+	/**
+	 * Initialize FMOD sound system.
+	 */
 	void MusicManager::initialize() {
 
 		// Create the main system object.
@@ -40,6 +55,9 @@ namespace ogreoids {
 
 	}
 
+	/**
+	 * 
+	 */
 	void MusicManager::setListenerAttributes(Ogre::Vector3 pos, Ogre::Vector3 vel, Ogre::Vector3 dir, Ogre::Vector3 up){
 
 		result = system->set3DListenerAttributes(0,
@@ -49,19 +67,63 @@ namespace ogreoids {
 
 	}
 
+	/**
+	 * Set 3D sound attibutes.
+	 */
 	FMOD::Channel* MusicManager::setAttributes(Ogre::Vector3 pos, Ogre::Vector3 vel, FMOD::Channel* channel) {
 		result = channel->set3DAttributes(&OgreToFmod(pos), &OgreToFmod(vel));
 		errorCheck("Failed to set sound 3D attributes for jetstream");
 		return channel;
 	}
 
+	/**
+	 * Initialize all music.
+	 */
 	void MusicManager::createMusic() {
 		
 	}
 
+	/**
+	 * Initialize all sound effects.
+	 */
 	void MusicManager::createSounds() {
 		
+		// Weapon system 1 shot.
+		FMOD::Sound* ws1;
+		result = system->createSound("media/sounds/sfx/arwingSingleLaserOneShot.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &ws1);
+		errorCheck("Failed to create weapon system 1 firing sound effect");
+		sounds.push_back(ws1);
 
+		// Weapon system 2 shot.
+		FMOD::Sound* ws2;
+		result = system->createSound("media/sounds/sfx/arwingDoubleLaserOneShot.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &ws2);
+		errorCheck("Failed to create weapon system 2 firing sound effect");
+		sounds.push_back(ws2);
+
+		// Weapon system 3 shot.
+		FMOD::Sound* ws3;
+		result = system->createSound("media/sounds/sfx/arwingHyperLaserOneShot.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &ws3);
+		errorCheck("Failed to create weapon system 3 firing sound effect");
+		sounds.push_back(ws3);
+
+	}
+
+
+// =====================================================================================
+//
+// #Update
+//
+// =====================================================================================
+
+	/**
+	 * Play a sound effect at the given index.
+	 *
+	 * @param index						index for which sound effect to play
+	 *
+	 */
+	void MusicManager::playSound(unsigned index) {
+		result = system->playSound(FMOD_CHANNEL_FREE, sounds[index], false, 0);
+		errorCheck("Failed to play sound");
 	}
 
 

@@ -82,6 +82,7 @@ namespace ogreoids {
 	 *
 	 */
     bool GameState::frameRenderingQueued(const Ogre::FrameEvent& evt) {
+		MusicManager::getInstance()->update(evt.timeSinceLastFrame);
         return true;
     }
 
