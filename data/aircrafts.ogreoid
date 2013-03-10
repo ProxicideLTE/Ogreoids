@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<root>
+
+	<aircraft name="Cobra Interceptor" mesh="CobraInterceptor.mesh" tag="interceptor">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a diam sem, non convallis tortor.
+		Nunc luctus libero eu felis blandit dapibus. Quisque tincidunt, lorem vitae posuere laoreet, lacus nisi fringilla magna,
+		vel lobortis felis nisi quis purus. Sed egestas vulputate pretium. Sed orci ligula, facilisis sit amet lobortis sit amet,
+		faucibus eget urna. Integer interdum urna sed ante porttitor a consequat lectus commodo. Phasellus a lacus ligula.
+	</aircraft>
+	
+	<aircraft name="Cobra Bomber" mesh="CobraBomber.mesh" tag="bomber">
+		Nulla dapibus molestie nulla a molestie. Morbi auctor, nibh at egestas volutpat, neque ipsum imperdiet libero,
+		eget molestie nulla diam non libero. Fusce felis nisi, tempor quis vehicula vel, aliquam non massa. Aliquam et
+		quam ut turpis porttitor molestie. Suspendisse potenti. In hac habitasse platea dictumst. Aliquam sollicitudin
+		mauris vitae sapien tempus varius. Aenean facilisis justo eget augue fringilla tincidunt vitae eget magna. Praesent
+		odio ipsum, fermentum nec elementum ac, malesuada et quam.
+	</aircraft>	
+	
+	<aircraft name="Cobra Fighter" mesh="CobraFighter.mesh" tag="fighter">
+		Aenean lectus erat, consequat eget porta ornare, commodo vel massa. Mauris lorem justo, aliquam vel imperdiet ac,
+		rhoncus ac enim. In eget ornare urna. Sed fermentum, ante vel ullamcorper eleifend, justo ligula pulvinar diam, ac
+		consequat orci tellus at felis. Morbi mollis mattis sapien, at viverra purus egestas in. Etiam suscipit tellus sed
+		ligula venenatis tincidunt mollis lectus rhoncus. Nulla vel sem lectus. Donec varius auctor dignissim. Nam tincidunt,
+		dolor id molestie porttitor, sem lorem viverra est, id gravida libero ligula quis diam.
+	</aircraft>		
+		
+</root>

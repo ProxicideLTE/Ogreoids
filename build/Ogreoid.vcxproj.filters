@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\GlobalVariables.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameState.cpp">
+      <Filter>State-Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WindowsConsole.cpp">
+      <Filter>Global\WindowsConsole</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Game.cpp" />
+    <ClCompile Include="..\src\MusicManager.cpp">
+      <Filter>Music Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tinystr.cpp">
+      <Filter>Global\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tinyxml.cpp">
+      <Filter>Global\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tinyxmlerror.cpp">
+      <Filter>Global\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tinyxmlparser.cpp">
+      <Filter>Global\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Util.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MainMenuState.cpp">
+      <Filter>State-Game\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SelectionMenuState.cpp">
+      <Filter>State-Game\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SelectionScene.cpp">
+      <Filter>SelectionScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameplayState.cpp">
+      <Filter>State-Game\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Level.cpp">
+      <Filter>Level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Projectile.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Obstacle.cpp">
+      <Filter>Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WeaponSystem.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Ogreoid.cpp">
+      <Filter>Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameOverState.cpp">
+      <Filter>State-Game\Menu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Game.h" />
+    <ClInclude Include="..\src\GlobalVariables.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stdafx.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameState.h">
+      <Filter>State-Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WindowsConsole.h">
+      <Filter>Global\WindowsConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MusicManager.h">
+      <Filter>Music Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tinystr.h">
+      <Filter>Global\TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tinyxml.h">
+      <Filter>Global\TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Util.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tinyxmls.h">
+      <Filter>Global\TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gamestates.h">
+      <Filter>State-Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MainMenuState.h">
+      <Filter>State-Game\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SelectionMenuState.h">
+      <Filter>State-Game\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SelectionScene.h">
+      <Filter>SelectionScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameplayState.h">
+      <Filter>State-Game\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Level.h">
+      <Filter>Level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Projectile.h">
+      <Filter>Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Obstacle.h">
+      <Filter>Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WeaponSystem.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Ogreoid.h">
+      <Filter>Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\obstacles.h">
+      <Filter>Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameOverState.h">
+      <Filter>State-Game\Menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Global">
+      <UniqueIdentifier>{f1f8f45e-e753-4355-826e-e01e02048491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State-Game">
+      <UniqueIdentifier>{9819cc97-9036-4403-ba57-51339fd21bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State-Game\Menu">
+      <UniqueIdentifier>{2618da58-06e0-49e7-b21e-bdb1cadca8aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State-Game\Gameplay">
+      <UniqueIdentifier>{4198b563-ee84-4429-b02d-bb4fa56c0573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global\TinyXML">
+      <UniqueIdentifier>{f50a4638-e7fd-4694-9e98-1f14536d8460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global\WindowsConsole">
+      <UniqueIdentifier>{f2816e93-4ec7-4e10-8929-d0e680245173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Music Manager">
+      <UniqueIdentifier>{13cb4e8f-c684-40ff-a6ec-f16695a5fbaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SelectionScene">
+      <UniqueIdentifier>{a9a32cfd-cc95-41e0-87cf-4bdd22944c75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level">
+      <UniqueIdentifier>{859f6c6d-c63a-4eaa-9e10-41ea7a578026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{dbe325e3-f969-44a0-b162-cb7eb7700a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Projectiles">
+      <UniqueIdentifier>{ebf2dacc-4bd6-40ab-b0df-fc10beb934a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obstacles">
+      <UniqueIdentifier>{7bf3645d-e0b0-4bd0-9bfc-882c1179c03a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
