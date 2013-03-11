@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 #include "MusicManager.h"
+#include "tinyxmls.h"
 
 namespace ogreoids {
 
@@ -100,11 +101,33 @@ namespace ogreoids {
 		errorCheck("Failed to create weapon system 2 firing sound effect");
 		sounds.push_back(ws2);
 
-		// Weapon system 3 shot.
+		// Weapon system 3 & Weapon system 4 shot.
 		FMOD::Sound* ws3;
 		result = system->createSound("media/sounds/sfx/arwingHyperLaserOneShot.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &ws3);
 		errorCheck("Failed to create weapon system 3 firing sound effect");
 		sounds.push_back(ws3);
+
+		//==============================================================================
+		// Menu sound effects.
+		//==============================================================================
+
+		// Start game sound effect.
+		FMOD::Sound* sg;
+		result = system->createSound("media/sounds/sfx/start.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &sg);
+		errorCheck("Failed to create start game sound effect");
+		sounds.push_back(sg);
+
+		// Pause game sound effect.
+		FMOD::Sound* pg;
+		result = system->createSound("media/sounds/sfx/pause.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &pg);
+		errorCheck("Failed to create pause game sound effect");
+		sounds.push_back(pg);
+
+		// Selection sound effect.
+		FMOD::Sound* selection;
+		result = system->createSound("media/sounds/sfx/menuMove.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &selection);
+		errorCheck("Failed to create selection sound effect");
+		sounds.push_back(selection);
 
 	}
 

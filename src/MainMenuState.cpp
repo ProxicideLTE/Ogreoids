@@ -179,6 +179,7 @@ namespace ogreoids {
 
 		// Determine which button was clicked.
         if (button == mStartButton) {
+			MusicManager::getInstance()->playSound(start_game);
 			Game::getInstance()->switchState(SelectionMenuState::getInstance());
         } 
 		

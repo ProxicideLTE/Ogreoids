@@ -9,11 +9,13 @@ namespace ogreoids {
 		ws1_shot = 0,
 		ws2_shot = 1,
 		ws3_shot = 2,
-		ws4_shot = 2
+		ws4_shot = 2,
 		// Menu.
-
+		start_game = 3,
+		pause_game = 4,
+		selection = 5
 		// Collisions.
-
+		
 	};
 
 	// Global enum for background music.

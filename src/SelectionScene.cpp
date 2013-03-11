@@ -118,6 +118,9 @@ namespace ogreoids {
 	 */
 	void SelectionScene::loadNext() {
 		
+		// Play sound.
+		MusicManager::getInstance()->playSound(selection);
+
 		// Reset and remove the entity.
 		mSceneNode->detachAllObjects();
 
@@ -135,6 +138,9 @@ namespace ogreoids {
 	 * This function will load the previous aircraft in the list.
 	 */
 	void SelectionScene::loadPrevious() {
+
+		// Play sound.
+		MusicManager::getInstance()->playSound(selection);
 
 		// Reset and remove the entity.
 		unsigned back;

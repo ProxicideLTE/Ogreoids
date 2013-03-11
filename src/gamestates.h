@@ -7,4 +7,7 @@
 #include "GameplayState.h"
 #include "GameOverState.h"
 
+#include "MusicManager.h"
+#include "GlobalVariables.h"
+
 #endif

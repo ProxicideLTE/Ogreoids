@@ -169,6 +169,7 @@ namespace ogreoids {
     bool GameplayState::keyPressed(const OIS::KeyEvent& arg) {
 
 		if (OIS::KC_ESCAPE == arg.key) {
+			if (!pause) MusicManager::getInstance()->playSound(pause_game);
 			pause = true;
 			mTrayMgr->showTrays();
 			mTrayMgr->showAll();
