@@ -13,9 +13,9 @@ namespace ogreoids {
 		// Menu.
 		start_game = 3,
 		pause_game = 4,
-		selection = 5
+		selection = 5,
 		// Collisions.
-		
+		crash = 6
 	};
 
 	// Global enum for background music.

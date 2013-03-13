@@ -129,6 +129,16 @@ namespace ogreoids {
 		errorCheck("Failed to create selection sound effect");
 		sounds.push_back(selection);
 
+		//==============================================================================
+		// Collisions.
+		//==============================================================================
+
+		// Selection sound effect.
+		FMOD::Sound* collision;
+		result = system->createSound("media/sounds/sfx/arwingHitObstacle.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &collision);
+		errorCheck("Failed to create collision sound effect");
+		sounds.push_back(collision);
+
 	}
 
 
