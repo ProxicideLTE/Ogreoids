@@ -1,4 +1,4 @@
-[Conjunction]
+[Ogreoids]
 
 [File Structure]
 FileSystem=./media/gui
@@ -13,10 +13,7 @@ FileSystem=./media/skyboxes
 FileSystem=./media/textures
 
 [Model Packages]
-Zip=./media/models/robot_shoulder_parts.zip
 Zip=./media/models/ships.zip
-Zip=./media/models/planetary.zip
-Zip=./media/models/Launchpad.zip
 
 [SDKTrays]
 Zip=./media/gui/SdkTrays_v1.7.zip

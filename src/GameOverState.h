@@ -11,7 +11,7 @@ namespace ogreoids {
         Ogre::Camera*					mCamera;
 
         // GUI variables.
-        OgreBites::Button*				mStartButton;
+        OgreBites::Button*				mMainMenuButton;
         OgreBites::Button*				mQuitButton;
 
 		Ogre::Degree					mSpeed;

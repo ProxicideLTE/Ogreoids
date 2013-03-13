@@ -1,0 +1,88 @@
+material SpaceBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture space.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+material GridBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture grid.jpg separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material MainMenu
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture main.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material TronBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture tron_skybox.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material Lightgrid
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture Lightgrid.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}

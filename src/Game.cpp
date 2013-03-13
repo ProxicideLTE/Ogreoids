@@ -200,6 +200,7 @@ namespace ogreoids {
 		gamestates.push_back(MainMenuState::getInstance());
 		gamestates.push_back(SelectionMenuState::getInstance());
 		gamestates.push_back(GameplayState::getInstance());
+		gamestates.push_back(GameOverState::getInstance());
 
 		for (unsigned i = 0; i < gamestates.size(); i++)
 			gamestates[i]->initialize();

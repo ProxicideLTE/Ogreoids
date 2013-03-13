@@ -17,6 +17,8 @@ namespace ogreoids {
 		Level*								level;
 		WeaponSystem*						currentWeaponSystem;
 
+		bool								isAlive;
+
 		Ogre::Real							hp;
 		Ogre::Real							speed;
 		Ogre::Degree						yawSpeed, pitchSpeed;
@@ -41,7 +43,11 @@ namespace ogreoids {
 		void updateCamera(Ogre::Real deltaT);
 
 		// Getters.
-		Ogre::Vector3 getPosition()		{ return mSceneNode->getPosition(); }
+		bool isPlayerAlive()				{ return isAlive; }
+		Ogre::Vector3 getPosition()			{ return mSceneNode->getPosition(); }
+
+		// Setters.
+		void applyDamage(Ogre::Real dmg);
 
 	private:
 

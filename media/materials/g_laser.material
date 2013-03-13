@@ -1,0 +1,14 @@
+material g_laser
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.117647 0.968628 0.176471 1
+			diffuse 0.117647 0.968628 0.176471 1
+			specular 0 0 0 1 10
+		}
+
+	}
+
+}

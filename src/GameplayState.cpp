@@ -149,10 +149,19 @@ namespace ogreoids {
 	 */
     bool GameplayState::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 		GameState::frameRenderingQueued(evt);
-		if (!pause) { level->update(evt.timeSinceLastFrame); }
+		
+		// If the game is NOT paused, update the level.
+		if (!pause)	{ 
+			level->update(evt.timeSinceLastFrame); 
+			if (level->isLevelOver()) { 
+				Game::getInstance()->switchState(GameOverState::getInstance()); 
+			}
+		}
+
 		btn_resume->setCaption("Resume");
         btn_main->setCaption("Main Menu");
 		btn_exit->setCaption("Exit Game");
+
         return true;
     }
 

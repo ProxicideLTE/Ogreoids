@@ -1,0 +1,41 @@
+material Tron
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture tron_skybox.png
+			}
+		}
+	}
+}
+
+material PlanetGround
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture planet.png
+			}
+		}
+	}
+}
+
+material GLightgrid
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture Lightgrid.png
+			}
+		}
+	}
+}

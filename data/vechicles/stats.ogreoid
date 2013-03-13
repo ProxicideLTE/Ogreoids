@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 
-<root>
+<ships>
 
 	<interceptor hp="500" speed="600" turnSpeed="25"></interceptor>
 	<bomber hp="1000" speed="300" turnSpeed="15"></bomber>
 	<fighter hp="350" speed="550" turnSpeed="20"></fighter>
 	
-</root>
+</ships>

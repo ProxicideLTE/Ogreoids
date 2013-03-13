@@ -1,0 +1,14 @@
+material GreenProjectile
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.301961 0.886275 0.27451 1
+			diffuse 0.301961 0.886275 0.27451 1
+			specular 0.045 0.045 0.045 1 25
+		}
+
+	}
+
+}

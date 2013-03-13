@@ -53,7 +53,7 @@ namespace ogreoids {
 		Ogre::Real zPos = 2500;
 
 		// Create some initial obstacles for the player to dodge and/or shoot at.
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			Ogre::Real x = Ogre::Math::RangeRandom(-90,90);
 			Ogre::Real y = Ogre::Math::RangeRandom(-90,90);
 			obstacles.push_back(new Ogreoid(Ogre::Vector3(x,y,zPos)));
@@ -77,12 +77,52 @@ namespace ogreoids {
 	 */
 	void Level::update(Ogre::Real deltaT) {
 		player->update(deltaT);
+		updateObstacles(deltaT);
 		updateProjectiles(deltaT);
 	}
 
+	void Level::updateObstacles(Ogre::Real deltaT) {
+
+		if (obstacles.empty()) return;
+
+		// Check collisions with the player.
+		for (unsigned i = 0; i < obstacles.size(); ) {
+			
+			// If the obstacle should be destroyed.
+			if (obstacles[i]->isDisposable()) {
+				delete obstacles[i];
+				obstacles[i] = obstacles.back();
+				obstacles.pop_back();
+			}
+
+			else {
+
+				// Get the distance to the obstacle.
+				Ogre::Vector3 playerPos = player->getPosition();
+				Ogre::Real dist = (playerPos - obstacles[i]->getObstaclePosition()).length();
+
+				if (dist <= 100) {
+					std::cout << "Collision" << std::endl;
+					player->applyDamage(obstacles[i]->getCollideDamage());
+					obstacles[i]->setDisposable();
+				}
+
+				else if (player->getPosition().z >= obstacles[i]->getObstaclePosition().z) {
+					std::cout << "Deleting obstacle" << std::endl;
+					obstacles[i]->setDisposable();
+				}
+
+			}
+
+			i++;
+
+		}
+
+	}
+
 	void Level::updateProjectiles(Ogre::Real deltaT) {
-		
-		if (projectiles.size() == 0)	return;
+
+		if (projectiles.size() == 0) return;
 
 		// Loop all projectiles in the level.
 		for (unsigned i = 0; i < projectiles.size(); /* */) {
@@ -100,42 +140,35 @@ namespace ogreoids {
 
 			else  {
 
-				if (obstacles.size() > 0) {
+				// For each projectile determine if it has collided with an obstacle.
+				for (unsigned j = 0; j < obstacles.size(); /* */) {
 
-					// For each projectile determine if it has collided with an obstacle.
-					for (unsigned j = 0; j < obstacles.size(); /* */) {
+					// If the obstacle should be destroyed.
+					if (obstacles[j]->isDisposable()) {
+						delete obstacles[j];
+						obstacles[j] = obstacles.back();
+						obstacles.pop_back();
+					}
 
-						// If the obstacle should be destroyed.
-						if (obstacles[j]->isDisposable()) {
-							delete obstacles[j];
-							obstacles[j] = obstacles.back();
-							obstacles.pop_back();
+					else {
+
+						// Get the distance from the projectile to the obstacle.
+						Ogre::Vector3 projectilePos = projectiles[i]->getProjectilePosition();
+						Ogre::Vector3 obstaclePos = obstacles[j]->getObstaclePosition();
+						Ogre::Real dist = (obstaclePos - projectilePos).length();
+							
+						// Projectile collided with obstacle.
+						if (dist <= obstacles[j]->getRadius()) {
+							projectiles[i]->setDisposable();
+							obstacles[j]->applyDamage(projectiles[i]->getDamage());
 						}
 
-						else {
+						j++;
 
-							// Get the distance from the projectile to the obstacle.
-							Ogre::Vector3 p = projectiles[i]->getProjectilePosition();
-							Ogre::Vector3 o = obstacles[j]->getObstaclePosition();
-							Ogre::Real dist = (p - o).length();
+					}
 
-							// Projectile collided with obstacle.
-							if (dist <= obstacles[j]->getRadius()) {
-								projectiles[i]->setDisposable();
-								obstacles[j]->applyDamage(projectiles[i]->getDamage());
-							}
-
-							// Obstacle passed player (off camera).
-							else if (player->getPosition().z >= o.z) {
-								obstacles[j]->setDisposable();
-							}
-
-							j++;
-
-						}
-
-					} // end of for loop for obstacles
-				}
+				} // end of for loop for obstacles
+				
 				i++;
 
 			}

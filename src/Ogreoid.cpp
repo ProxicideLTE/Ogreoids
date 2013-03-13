@@ -39,6 +39,7 @@ namespace ogreoids {
 		mSceneNode->attachObject(mesh);
 		
 		// Initialize stats.
+		Obstacle::collideDmg = 500;
 		speed = 350;
 		hp = 100;
 		radius = (mesh->getBoundingBox().getMaximum() - mesh->getBoundingBox().getCenter()).length();

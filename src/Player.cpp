@@ -28,6 +28,7 @@ namespace ogreoids {
 	Player::Player(Level* l) 
 		: mSceneMgr(GameplayState::getInstance()->getSceneManager())
 		, level(l)
+		, isAlive(true)
 	{
 		setupModel();
 		setupStats();
@@ -309,6 +310,19 @@ namespace ogreoids {
 // #Event Callbacks
 //
 // =====================================================================================
+
+	/**
+	 * Apply damage to the player.
+	 */
+	void Player::applyDamage(Ogre::Real dmg) {
+		hp -= dmg; 
+		std::cout << "Player HP: " << hp << std::endl;
+		MusicManager::getInstance()->playSound(crash);
+
+		if (hp <= 0) 
+			isAlive = false;
+		
+	}
 
 	/**
 	 * This function will handle all keyboard events, when the user strikes any key.

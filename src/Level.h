@@ -27,6 +27,7 @@ namespace ogreoids {
 		void update(Ogre::Real deltaT);
 
 		// Getters.
+		bool isLevelOver()								{ return !player->isPlayerAlive(); }
 		OIS::KeyListener* getKeyListener()				{ return player; }
 		OIS::MouseListener* getMouseListener()			{ return player; }
 
@@ -37,6 +38,7 @@ namespace ogreoids {
 
 		void initLevel();
 		void updateProjectiles(Ogre::Real deltaT);
+		void updateObstacles(Ogre::Real deltaT);
 
 	};
 

@@ -12,6 +12,7 @@ namespace ogreoids {
 		// Instance variables.
 		bool								disposable;
 
+		Ogre::Real							collideDmg;
 		Ogre::Real							speed;
 		Ogre::Real							hp;
 		Ogre::Real							radius;
@@ -29,6 +30,7 @@ namespace ogreoids {
 
 		// Getters.
 		bool isDisposable()					{ return disposable; }
+		Ogre::Real getCollideDamage()		{ return collideDmg; }
 		Ogre::Real getRadius()				{ return radius; }
 		Ogre::Vector3 getObstaclePosition()	{ return mSceneNode->getPosition(); }
 
