@@ -30,6 +30,9 @@ namespace ogreoids {
 		for (unsigned i = 0; i < projectiles.size(); i++)
 			delete projectiles[i];
 
+		for (unsigned i = 0; i < powerups.size(); i++)
+			delete powerups[i];
+
 	}
 
 
@@ -56,7 +59,7 @@ namespace ogreoids {
 		for (int i = 0; i < 10; i++) {
 			Ogre::Real x = Ogre::Math::RangeRandom(-90,90);
 			Ogre::Real y = Ogre::Math::RangeRandom(-90,90);
-			obstacles.push_back(new Ogreoid(Ogre::Vector3(x,y,zPos)));
+			obstacles.push_back(new Ogreoid(this, Ogre::Vector3(x,y,zPos)));
 			zPos += 1500;
 		}
 

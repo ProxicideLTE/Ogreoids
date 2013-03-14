@@ -29,14 +29,14 @@ namespace ogreoids {
 		virtual void update(Ogre::Real deltaT);
 
 		// Getters.
-		bool isDisposable()					{ return disposable; }
-		Ogre::Real getCollideDamage()		{ return collideDmg; }
-		Ogre::Real getRadius()				{ return radius; }
-		Ogre::Vector3 getObstaclePosition()	{ return mSceneNode->getPosition(); }
+		bool isDisposable()							{ return disposable; }
+		Ogre::Real getCollideDamage()				{ return collideDmg; }
+		Ogre::Real getRadius()						{ return radius; }
+		Ogre::Vector3 getObstaclePosition()			{ return mSceneNode->getPosition(); }
 
 		// Setters.
-		void setDisposable()				{ disposable = true; }
-		void applyDamage(Ogre::Real dmg)	{ hp -= dmg;	if (hp <= 0) setDisposable(); }
+		virtual void setDisposable()				{ disposable = true; }
+		virtual void applyDamage(Ogre::Real dmg)	{ hp -= dmg;	if (hp <= 0) setDisposable(); }
 
 
 	private:

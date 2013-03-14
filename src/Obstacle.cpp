@@ -7,6 +7,9 @@ namespace ogreoids {
 
 	/**
 	 * Obstacle constructor.
+	 *
+	 * @param pos			spawn position
+	 *
 	 */
 	Obstacle::Obstacle(Ogre::Vector3 pos) 
 		: mSceneMgr(GameplayState::getInstance()->getSceneManager())

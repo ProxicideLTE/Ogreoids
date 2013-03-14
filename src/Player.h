@@ -18,6 +18,7 @@ namespace ogreoids {
 		WeaponSystem*						currentWeaponSystem;
 
 		bool								isAlive;
+		unsigned							systemIndex;
 
 		Ogre::Real							hp;
 		Ogre::Real							speed;
@@ -48,6 +49,7 @@ namespace ogreoids {
 
 		// Setters.
 		void applyDamage(Ogre::Real dmg);
+		void upgradeWeaponSystem();
 
 	private:
 

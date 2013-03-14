@@ -1,15 +1,20 @@
 #include "stdafx.h"
 
-#include "Obstacle.h"
-#include "Ogreoid.h"
+#include "obstacles.h"
+#include "Level.h"
 
 namespace ogreoids {
 
 	/**
 	 * Ogreoid constructor.
+	 *
+	 * @param l				pointer the level
+	 * @param pos			spawn position
+	 *
 	 */
-	Ogreoid::Ogreoid(Ogre::Vector3 pos) 
-		: Obstacle(pos)
+	Ogreoid::Ogreoid(Level* l, Ogre::Vector3 pos) 
+		: lvl(l)
+		, Obstacle(pos)
 	{
 		init();
 	}
@@ -39,7 +44,7 @@ namespace ogreoids {
 		mSceneNode->attachObject(mesh);
 		
 		// Initialize stats.
-		Obstacle::collideDmg = 500;
+		Obstacle::collideDmg = 100;
 		speed = 350;
 		hp = 100;
 		radius = (mesh->getBoundingBox().getMaximum() - mesh->getBoundingBox().getCenter()).length();
@@ -57,6 +62,19 @@ namespace ogreoids {
 	 * This function updates the ogreoid.
 	 */
 	void Ogreoid::update(Ogre::Real deltaT) {
+
+	}
+
+	/**
+	 * This function applies damage the ogreoid.
+	 */
+	void Ogreoid::applyDamage(Ogre::Real dmg) {
+		hp -= dmg;	
+		
+		if (hp <= 0) {
+			setDisposable();
+			lvl->addObstacle(new Powerup(lvl->getPlayer(), mSceneNode->getPosition()));
+		}
 
 	}
 

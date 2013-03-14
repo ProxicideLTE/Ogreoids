@@ -66,6 +66,9 @@
     <ClCompile Include="..\src\GameOverState.cpp">
       <Filter>State-Game\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Powerup.cpp">
+      <Filter>Obstacles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h" />
@@ -134,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="..\src\GameOverState.h">
       <Filter>State-Game\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Powerup.h">
+      <Filter>Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

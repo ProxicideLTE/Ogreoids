@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <queue>
 
 // Ogre3D and OIS headers.
 #include <Ogre.h>

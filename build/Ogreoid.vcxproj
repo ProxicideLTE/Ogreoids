@@ -99,6 +99,7 @@
     <ClCompile Include="..\src\Obstacle.cpp" />
     <ClCompile Include="..\src\Ogreoid.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
+    <ClCompile Include="..\src\Powerup.cpp" />
     <ClCompile Include="..\src\Projectile.cpp" />
     <ClCompile Include="..\src\SelectionMenuState.cpp" />
     <ClCompile Include="..\src\SelectionScene.cpp" />
@@ -128,6 +129,7 @@
     <ClInclude Include="..\src\obstacles.h" />
     <ClInclude Include="..\src\Ogreoid.h" />
     <ClInclude Include="..\src\Player.h" />
+    <ClInclude Include="..\src\Powerup.h" />
     <ClInclude Include="..\src\Projectile.h" />
     <ClInclude Include="..\src\SelectionMenuState.h" />
     <ClInclude Include="..\src\SelectionScene.h" />

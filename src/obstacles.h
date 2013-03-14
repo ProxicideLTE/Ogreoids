@@ -3,5 +3,6 @@
 
 #include "Obstacle.h"
 #include "Ogreoid.h"
+#include "Powerup.h"
 
 #endif

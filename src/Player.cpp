@@ -195,11 +195,11 @@ namespace ogreoids {
 		ws4->addOutput(rightWing);
 		ws4->setSystemDamage(40);
 		ws4->setLifeSpan(0.5f);
-		ws4->setSoundFile(ws4_shot);
 		weaponSystems.push_back(ws4);
 
 		// Set default weapon system.
-		currentWeaponSystem = ws4;
+		currentWeaponSystem = ws1;
+		systemIndex = 0;
 
 	}
 
@@ -325,6 +325,27 @@ namespace ogreoids {
 	}
 
 	/**
+	 * Change weapon system for the player.
+	 */
+	void Player::upgradeWeaponSystem() {
+
+		// Calculate the next index for the next weapon system.
+		unsigned next = systemIndex + 1;
+
+		// NULL check.
+		if (next == 3) {
+			systemIndex = 2;
+			currentWeaponSystem = weaponSystems[2];
+		}
+
+		else {
+			systemIndex = next;
+			currentWeaponSystem = weaponSystems[next];
+		}
+
+	}
+
+	/**
 	 * This function will handle all keyboard events, when the user strikes any key.
 	 */
 	bool Player::keyPressed(const OIS::KeyEvent& arg) {
@@ -332,7 +353,9 @@ namespace ogreoids {
 		if (OIS::KC_1 == arg.key)				currentWeaponSystem = weaponSystems[0];
 		else if (OIS::KC_2 == arg.key)			currentWeaponSystem = weaponSystems[1];
 		else if (OIS::KC_3 == arg.key)			currentWeaponSystem = weaponSystems[2];
-		else if (OIS::KC_4 == arg.key)			currentWeaponSystem = weaponSystems[3];
+		//else if (OIS::KC_4 == arg.key)			currentWeaponSystem = weaponSystems[3];
+
+		else if (OIS::KC_EQUALS == arg.key)		upgradeWeaponSystem();
 
 		return true;
 	}
