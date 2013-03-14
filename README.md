@@ -5,4 +5,4 @@ Author:
 Jayvin Duong
 
 Description: 
-3D asteroids theme game in Ogre3D.
+A Starfox style game made in Ogre3D, TinyXML, FMOD, and CEGUI.
