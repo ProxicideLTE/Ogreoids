@@ -20,7 +20,7 @@ namespace ogreoids {
 		bool								isAlive;
 		unsigned							systemIndex;
 
-		Ogre::Real							hp;
+		Ogre::Real							hp, hp_modernate;
 		Ogre::Real							speed;
 		Ogre::Degree						yawSpeed, pitchSpeed;
 		Ogre::Entity*						mesh;

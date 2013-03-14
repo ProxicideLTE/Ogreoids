@@ -6,16 +6,15 @@ namespace ogreoids {
 	// Global enum for sounds.
 	enum sounds {
 		// Weapon Systems.
-		ws1_shot = 0,
-		ws2_shot = 1,
-		ws3_shot = 2,
-		ws4_shot = 2,
+		ws1_shot = 0,				ws2_shot = 1,
+		ws3_shot = 2,				ws4_shot = 2,
 		// Menu.
-		start_game = 3,
-		pause_game = 4,
+		start_game = 3,				pause_game = 4,
 		selection = 5,
 		// Collisions.
-		crash = 6
+		crash = 6,					laser_powerup = 7,
+		// Warning.
+		warning_modernate = 8
 	};
 
 	// Global enum for background music.

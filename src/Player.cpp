@@ -136,6 +136,7 @@ namespace ogreoids {
 				speed = charToFloat(elem->Attribute("speed"));
 				yawSpeed = Ogre::Degree(charToFloat(elem->Attribute("turnSpeed")));
 				pitchSpeed = Ogre::Degree(charToFloat(elem->Attribute("turnSpeed")));
+				hp_modernate = hp / 2.0f;
 
 			}
 
@@ -317,7 +318,11 @@ namespace ogreoids {
 	void Player::applyDamage(Ogre::Real dmg) {
 		hp -= dmg; 
 		std::cout << "Player HP: " << hp << std::endl;
-		MusicManager::getInstance()->playSound(crash);
+
+		// Play warning sound if the player's hp is getting low.
+		if (hp <= hp_modernate) {
+			MusicManager::getInstance()->playSound(warning_modernate);
+		}
 
 		if (hp <= 0) 
 			isAlive = false;
@@ -350,12 +355,12 @@ namespace ogreoids {
 	 */
 	bool Player::keyPressed(const OIS::KeyEvent& arg) {
 
-		if (OIS::KC_1 == arg.key)				currentWeaponSystem = weaponSystems[0];
-		else if (OIS::KC_2 == arg.key)			currentWeaponSystem = weaponSystems[1];
-		else if (OIS::KC_3 == arg.key)			currentWeaponSystem = weaponSystems[2];
+		//if (OIS::KC_1 == arg.key)				currentWeaponSystem = weaponSystems[0];
+		//else if (OIS::KC_2 == arg.key)			currentWeaponSystem = weaponSystems[1];
+		//else if (OIS::KC_3 == arg.key)			currentWeaponSystem = weaponSystems[2];
 		//else if (OIS::KC_4 == arg.key)			currentWeaponSystem = weaponSystems[3];
 
-		else if (OIS::KC_EQUALS == arg.key)		upgradeWeaponSystem();
+		//else if (OIS::KC_EQUALS == arg.key)		upgradeWeaponSystem();
 
 		return true;
 	}

@@ -54,13 +54,15 @@ namespace ogreoids {
 		player = new Player(this);
 
 		Ogre::Real zPos = 2500;
+		Ogre::Real dist = 1500;
 
 		// Create some initial obstacles for the player to dodge and/or shoot at.
-		for (int i = 0; i < 10; i++) {
-			Ogre::Real x = Ogre::Math::RangeRandom(-90,90);
-			Ogre::Real y = Ogre::Math::RangeRandom(-90,90);
+		for (int i = 0; i < 20; i++) {
+			Ogre::Real x = Ogre::Math::RangeRandom(-100,100);
+			Ogre::Real y = Ogre::Math::RangeRandom(-100,100);
 			obstacles.push_back(new Ogreoid(this, Ogre::Vector3(x,y,zPos)));
-			zPos += 1500;
+			zPos += dist;
+			dist -= 90;
 		}
 
 	}
@@ -107,6 +109,7 @@ namespace ogreoids {
 				if (dist <= 100) {
 					std::cout << "Collision" << std::endl;
 					player->applyDamage(obstacles[i]->getCollideDamage());
+					obstacles[i]->playCollideSound();
 					obstacles[i]->setDisposable();
 				}
 

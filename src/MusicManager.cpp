@@ -133,11 +133,27 @@ namespace ogreoids {
 		// Collisions.
 		//==============================================================================
 
-		// Selection sound effect.
+		// Obstacle sound effect.
 		FMOD::Sound* collision;
 		result = system->createSound("media/sounds/sfx/arwingHitObstacle.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &collision);
 		errorCheck("Failed to create collision sound effect");
 		sounds.push_back(collision);
+
+		// Powerup sound effect. 
+		FMOD::Sound* laser_powerup;
+		result = system->createSound("media/sounds/sfx/laserPickup.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &laser_powerup);
+		errorCheck("Failed to create powerup sound effect");
+		sounds.push_back(laser_powerup);
+
+		//==============================================================================
+		// Warning.
+		//==============================================================================
+
+		// Warning sound effect. 
+		FMOD::Sound* warning;
+		result = system->createSound("media/sounds/sfx/damageAlertModerate.mp3", FMOD_LOOP_OFF | FMOD_2D, 0, &warning);
+		errorCheck("Failed to create damageAlertModerate sound effect");
+		sounds.push_back(warning);
 
 	}
 

@@ -38,6 +38,8 @@ namespace ogreoids {
 		virtual void setDisposable()				{ disposable = true; }
 		virtual void applyDamage(Ogre::Real dmg)	{ hp -= dmg;	if (hp <= 0) setDisposable(); }
 
+		virtual void playCollideSound()				{ MusicManager::getInstance()->playSound(crash); }
+
 
 	private:
 

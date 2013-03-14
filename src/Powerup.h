@@ -1,6 +1,8 @@
 #ifndef POWERUP_H_
 #define POWERUP_H_
 
+#include "gamestates.h"
+
 namespace ogreoids {
 
 	class Player;
@@ -22,7 +24,8 @@ namespace ogreoids {
 
 		// Setters.
 		void setDisposable();
-		void applyDamage(Ogre::Real dmg)	{ }
+		void applyDamage(Ogre::Real dmg)			{ }
+		virtual void playCollideSound()				{ MusicManager::getInstance()->playSound(laser_powerup); }
 
 	private:
 
