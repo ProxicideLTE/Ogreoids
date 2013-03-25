@@ -73,7 +73,14 @@ namespace ogreoids {
 		
 		if (hp <= 0) {
 			setDisposable();
-			lvl->addObstacle(new Powerup(lvl->getPlayer(), mSceneNode->getPosition()));
+
+			// Random chance of dropping a powerup.
+			Ogre::Real randomVal = Ogre::Math::RangeRandom(0,10);
+
+			// 1/5 times for a powerup to drop.
+			if (randomVal > 7)
+				lvl->addObstacle(new Powerup(lvl->getPlayer(), mSceneNode->getPosition()));
+
 		}
 
 	}

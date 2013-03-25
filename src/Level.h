@@ -45,6 +45,8 @@ namespace ogreoids {
 		void updateProjectiles(Ogre::Real deltaT);
 		void updateObstacles(Ogre::Real deltaT);
 
+		void spawnEnemies(int ammount);
+
 	};
 
 }

@@ -67,6 +67,26 @@ namespace ogreoids {
 
 	}
 
+	/**
+	 * Function to spawn more enemies onto the game for the player to face.
+	 */
+	void Level::spawnEnemies(int ammount) {
+
+		// Get distance based on where the player is.
+		Ogre::Real zPos = player->getPosition().z + 2500;
+		Ogre::Real dist = 1500;
+
+		// Create some initial obstacles for the player to dodge and/or shoot at.
+		for (int i = 0; i < ammount; i++) {
+			Ogre::Real x = Ogre::Math::RangeRandom(-100,100);
+			Ogre::Real y = Ogre::Math::RangeRandom(-100,100);
+			obstacles.push_back(new Ogreoid(this, Ogre::Vector3(x,y,zPos)));
+			zPos += dist;
+			dist -= 90;
+		}
+
+	}
+
 
 // =====================================================================================
 //
@@ -88,7 +108,10 @@ namespace ogreoids {
 
 	void Level::updateObstacles(Ogre::Real deltaT) {
 
-		if (obstacles.empty()) return;
+		if (obstacles.empty()) {
+			spawnEnemies(10);
+			return;
+		}
 
 		// Check collisions with the player.
 		for (unsigned i = 0; i < obstacles.size(); ) {
